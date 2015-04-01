@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Session;
+
 @interface RecordingsViewController : UIViewController
 
 + (RecordingsViewController *)instantiateWithSession:(NSString *)session;
 
-@property (nonatomic, strong) NSString *session;
+@property (nonatomic, strong) Session *session;
 
 @end

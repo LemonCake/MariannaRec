@@ -11,8 +11,10 @@
 #import "DataController.h"
 #import "InfoViewController.h"
 #import "UIAlertView+Blocks.h"
+#import "SessionCell.h"
+#import "Session.h"
 
-@interface SessionsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface SessionsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, SessionCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -66,17 +68,18 @@
     static NSString *SESSION_CELL = @"SESSION_CELL";
     static NSString *NEW_SESSION_CELL = @"NEW_SESSION_CELL";
     
-    UITableViewCell *cell = nil;
+
     
     if (indexPath.row == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:NEW_SESSION_CELL];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NEW_SESSION_CELL];
         cell.textLabel.text = @"Start new session...";
+        return cell;
     } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:SESSION_CELL];
-        cell.textLabel.text = [DataController sharedInstance].allSessions[indexPath.row - 1];
+        SessionCell *cell = [tableView dequeueReusableCellWithIdentifier:SESSION_CELL];
+        [cell configureWithSession:[DataController sharedInstance].allSessions[(NSUInteger)indexPath.row - 1]];
+        cell.delegate = self;
+        return cell;
     }
-    
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -93,12 +96,9 @@
 
         av.tapBlock = ^(UIAlertView *alertView, NSInteger buttonIndex) {
             if (buttonIndex == alertView.firstOtherButtonIndex) {
-                [[DataController sharedInstance] createNewSession:[alertView textFieldAtIndex:0].text completion:^(BOOL success) {
-                    if (success) {
-                        [weakSelf.tableView reloadData];
-                    } else {
-                        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Session already exists" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-                    }
+                [[DataController sharedInstance] createNewSession:[alertView textFieldAtIndex:0].text
+                                                       completion:^(void) {
+                    [weakSelf.tableView reloadData];
                 }];
             }
         };
@@ -130,6 +130,29 @@
             }
         }];
     }
+}
+
+#pragma mark - SessionCellDelegate methods
+
+- (void)sessionCell:(SessionCell *)sessionCell onEdit:(Session *)session {
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Rename session"
+                                                 message:@""
+                                                delegate:self
+                                       cancelButtonTitle:@"Cancel"
+                                       otherButtonTitles:@"Rename", nil];
+    
+    av.alertViewStyle = UIAlertViewStylePlainTextInput;
+    
+    MagicBlockWeakSelf weakSelf = self;
+    
+    av.tapBlock = ^(UIAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex == alertView.firstOtherButtonIndex) {
+            [[DataController sharedInstance] renameSession:session title:[alertView textFieldAtIndex:0].text];
+            [weakSelf.tableView reloadData];
+        }
+    };
+    
+    [av show];
 }
 
 @end

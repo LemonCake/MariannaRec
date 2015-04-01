@@ -8,19 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^DataControllerCompletionBlock)(BOOL success);
+typedef void (^DataControllerCompletionBlock)(void);
 
 @class Recording;
+@class Session;
 @interface DataController : NSObject
 
 + (DataController *)sharedInstance;
 - (NSArray *)allSessions;
-- (NSMutableArray *)getRecordingsForSession:(NSString *)session;
 - (void)createNewSession:(NSString *)session completion:(DataControllerCompletionBlock)completion;
-- (void)deleteSession:(NSString *)session;
-- (void)createRecording:(Recording *)recording session:(NSString *)session;
-- (void)deleteRecording:(Recording *)recording session:(NSString *)session;
-
+- (void)deleteSession:(Session *)session;
+- (void)createRecording:(Recording *)recording session:(Session *)session;
+- (void)deleteRecording:(Recording *)recording session:(Session *)session;
+- (void)renameSession:(Session *)session title:(NSString *)title;
+- (void)renameTrack:(Recording *)recording title:(NSString *)title;
 - (NSString *)documentsDirectory;
 - (NSURL *)urlForRecording:(Recording *)recording;
 

@@ -7,11 +7,11 @@
 //
 
 #import "SessionCell.h"
-
-const NSString *kSessionTitleKey = @"kSessionTitleKey";
+#import "Session.h"
 
 @interface SessionCell()
 
+@property (strong, nonatomic) Session *session;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
@@ -22,13 +22,14 @@ const NSString *kSessionTitleKey = @"kSessionTitleKey";
     // Initialization code
 }
 
-- (void)configure:(NSDictionary *)config {
-    self.titleLabel.text = config[kSessionTitleKey];
+- (void)configureWithSession:(Session *)session {
+    self.session = session;
+    self.titleLabel.text = session.title;
 }
 
 - (IBAction)onEdit:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(sessionCellEdit:)]) {
-        [self.delegate sessionCellEdit:self];
+    if ([self.delegate respondsToSelector:@selector(sessionCell:onEdit:)]) {
+        [self.delegate sessionCell:self onEdit:self.session];
     }
 }
 

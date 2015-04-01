@@ -8,12 +8,14 @@
 
 #import "DataController.h"
 #import "Recording.h"
+#import "Session.h"
 
-static NSString *kSessionsKey = @"sessions_and_recordings";
+NSString *const kOldSessionsKey = @"sessions_and_recordings"; // version 1.0 key to migrate
+NSString *const kSessionsDataKey = @"kSessionsDataKey";
 
 @interface DataController()
 
-@property (nonatomic, strong) NSMutableDictionary *data;
+@property (nonatomic, strong) NSMutableArray *data;
 
 @end
 
@@ -41,36 +43,46 @@ static NSString *kSessionsKey = @"sessions_and_recordings";
 }
 
 - (void)loadData {
-    self.data = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kSessionsKey]];
+    self.data = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kSessionsDataKey]];
     
     if (!self.data) {
-        self.data = [NSMutableDictionary dictionary];
-        [[NSUserDefaults standardUserDefaults] setObject:self.data forKey:kSessionsKey];
+        self.data = [NSMutableArray array];
+        [[NSUserDefaults standardUserDefaults] setObject:self.data forKey:kSessionsDataKey];
+        [self save];
+    }
+
+    NSMutableDictionary *oldSessions = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kOldSessionsKey]];
+    
+    if (oldSessions) {
+        for (NSString *key in oldSessions) {
+            NSMutableArray *oldRecordings = oldSessions[key];
+            NSDictionary *configDictionary = @{kSessionTitleKey : key,
+                                               kSessionRecordingsKey : oldRecordings,
+                                               kSessionCreatedAtKey : (oldRecordings.count > 0 ? ((Recording *)oldRecordings.firstObject).createdAt : [NSDate date])};
+            [self.data addObject:[Session sessionFromDictionary:configDictionary]];
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kOldSessionsKey];
         [self save];
     }
 }
 
 - (void)createNewSession:(NSString *)session completion:(DataControllerCompletionBlock)completion {
-    if ((self.data)[session]) {
-        if (completion) {
-            completion(NO);
-        }
-    } else {
-        (self.data)[session] = [NSMutableArray array];
-        [self save];
+    Session *newSession = [Session sessionFromDictionary:@{kSessionTitleKey : session,
+                                                           kSessionCreatedAtKey : [NSDate date],
+                                                           kSessionRecordingsKey : [NSMutableArray array]}];
+    [self.data addObject:newSession];
+    [self save];
         
-        if (completion) {
-            completion(YES);
-        }
-    }
+    if (completion) { completion(); }
 }
 
-- (void)deleteSession:(NSString *)session {
-    for (Recording *recording in (self.data)[session]) {
+- (void)deleteSession:(Session *)session {
+    for (Recording *recording in session.recordings) {
         [self deleteFileAtPath:[self urlForRecording:recording]];
     }
     
-    [self.data removeObjectForKey:session];
+    [self.data removeObject:session];
     [self save];
 }
 
@@ -84,29 +96,33 @@ static NSString *kSessionsKey = @"sessions_and_recordings";
     }
 }
 
-- (void)createRecording:(Recording *)recording session:(NSString *)session {
-    NSMutableArray *recordings = [self.data objectForKey:session];
-    [recordings addObject:recording];
+- (void)createRecording:(Recording *)recording session:(Session *)session {
+    [session.recordings addObject:recording];
     [self save];
 }
 
-- (void)deleteRecording:(Recording *)recording session:(NSString *)session {
+- (void)deleteRecording:(Recording *)recording session:(Session *)session {
     [self deleteFileAtPath:[self urlForRecording:recording]];
-    [(self.data)[session] removeObject:recording];
+    [session.recordings removeObject:recording];
     [self save];
 }
 
-- (NSMutableArray *)getRecordingsForSession:(NSString *)session {
-    NSMutableArray *recordings = [self.data objectForKey:session];
-    return recordings ? recordings : [NSMutableArray array];
+- (void)renameSession:(Session *)session title:(NSString *)title {
+    session.title = title;
+    [self save];
+}
+
+- (void)renameTrack:(Recording *)recording title:(NSString *)title {
+    recording.title = title;
+    [self save];
 }
 
 - (NSArray *)allSessions {
-    return [self.data allKeys];
+    return self.data;
 }
 
 - (void)save {
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.data] forKey:kSessionsKey];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.data] forKey:kSessionsDataKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

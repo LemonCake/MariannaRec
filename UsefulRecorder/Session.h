@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const kSessionTitleKey;
+extern NSString *const kSessionCreatedAtKey;
+extern NSString *const kSessionRecordingsKey;
+
 @interface Session : NSObject <NSCoding>
 
 + (Session *)sessionFromDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSDate *createdAt;
+@property (nonatomic, strong, readonly) NSDate *createdAt;
 @property (nonatomic, strong, readonly) NSMutableArray *recordings;
 
 @end

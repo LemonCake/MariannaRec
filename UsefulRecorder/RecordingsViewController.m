@@ -10,14 +10,16 @@
 #import "Recording.h"
 #import "DataController.h"
 #import "UIAlertView+Blocks.h"
+#import "Session.h"
+#import "RecordingCell.h"
+
 #import <AVFoundation/AVFoundation.h>
 
-@interface RecordingsViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioRecorderDelegate>
+@interface RecordingsViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioRecorderDelegate, RecordingCellDelegate>
 
-@property (nonatomic, strong) NSMutableArray *recordings;
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) AVAudioRecorder *audioRecorder;
-@property (nonatomic, strong) Recording *activeRecording;
+@property (nonatomic, strong) Recording *activeTrack;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -28,7 +30,7 @@
 
 @implementation RecordingsViewController
 
-+ (RecordingsViewController *)instantiateWithSession:(NSString *)session {
++ (RecordingsViewController *)instantiateWithSession:(Session *)session {
     UIStoryboard *storyboard = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ?
                                 [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil] :
                                 [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
@@ -41,7 +43,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.recordings = [[DataController sharedInstance] getRecordingsForSession:self.session];
 }
 
 #pragma mark - IBAction methods
@@ -130,7 +131,7 @@
 - (void)stopPlayer {
     [self.audioPlayer stop];
     self.audioPlayer = nil;
-    self.activeRecording = nil;
+    self.activeTrack = nil;
     [self.updateTimer invalidate];
     
     [UIView animateWithDuration:0.3f animations:^{
@@ -188,10 +189,10 @@
 #pragma mark - AVAudioRecorderDelegate
 
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
-    Recording *thisRecording = [[Recording alloc] init];
-    thisRecording.filePath = recorder.url.pathComponents.lastObject;
-    thisRecording.title = [NSString stringWithFormat:@"Track %lu", (unsigned long)self.recordings.count];
-    [[DataController sharedInstance] createRecording:thisRecording session:self.session];
+    Recording *thisTrack = [[Recording alloc] init];
+    thisTrack.filePath = recorder.url.pathComponents.lastObject;
+    thisTrack.title = [NSString stringWithFormat:@"Track %lu", (unsigned long)self.session.recordings.count];
+    [[DataController sharedInstance] createRecording:thisTrack session:self.session];
     
     [self.tableView reloadData];
     
@@ -203,16 +204,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *RECORDING_CELL = @"RECORDING_CELL";
     
-    Recording *thisRecording = (self.recordings)[(NSUInteger) indexPath.row];
+    Recording *thisTrack = (self.session.recordings)[(NSUInteger) indexPath.row];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:RECORDING_CELL forIndexPath:indexPath];
-    cell.textLabel.text = thisRecording.title;
+    RecordingCell *cell = [tableView dequeueReusableCellWithIdentifier:RECORDING_CELL forIndexPath:indexPath];
+    [cell configureWithRecording:thisTrack];
+    cell.delegate = self;
     
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.recordings.count;
+    return self.session.recordings.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -222,11 +224,11 @@
 #pragma mark - UITableViewDelegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Recording *thisRecording = (self.recordings)[(NSUInteger) indexPath.row];
-    if (self.activeRecording == thisRecording) {
+    Recording *thisTrack = self.session.recordings[(NSUInteger) indexPath.row];
+    if (self.activeTrack == thisTrack) {
         [self stopPlayer];
     } else {
-        [self playRecording:thisRecording];
+        [self playRecording:thisTrack];
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -239,9 +241,32 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [[DataController sharedInstance] deleteRecording:self.recordings[(NSUInteger) indexPath.row] session:self.session];
+        [[DataController sharedInstance] deleteRecording:self.session.recordings[(NSUInteger) indexPath.row] session:self.session];
         [self.tableView reloadData];
     }
+}
+
+#pragma mark - RecordingCellDelegate methods
+
+- (void)recordingCell:(RecordingCell *)recordingCell onEdit:(Recording *)track {
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Rename recording"
+                                                 message:@""
+                                                delegate:self
+                                       cancelButtonTitle:@"Cancel"
+                                       otherButtonTitles:@"Rename", nil];
+    
+    av.alertViewStyle = UIAlertViewStylePlainTextInput;
+    
+    MagicBlockWeakSelf weakSelf = self;
+    
+    av.tapBlock = ^(UIAlertView *alertView, NSInteger buttonIndex) {
+        if (buttonIndex == alertView.firstOtherButtonIndex) {
+            [[DataController sharedInstance] renameTrack:track title:[alertView textFieldAtIndex:0].text];
+            [weakSelf.tableView reloadData];
+        }
+    };
+    
+    [av show];
 }
 
 @end

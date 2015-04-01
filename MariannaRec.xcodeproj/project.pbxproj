@@ -20,6 +20,7 @@
 		7C593BE61A09FB090027A611 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C593BE51A09FB090027A611 /* logo.png */; };
 		7C5E08DA1ACC50DA00CF88B7 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E08D91ACC50DA00CF88B7 /* SessionCell.m */; };
 		7C5E08DD1ACC541E00CF88B7 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E08DC1ACC541E00CF88B7 /* Session.m */; };
+		7C5E08E01ACC74CB00CF88B7 /* RecordingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E08DF1ACC74CB00CF88B7 /* RecordingCell.m */; };
 		7C5ED8A61A0AF7F0006F92C3 /* icn_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A21A0AF7F0006F92C3 /* icn_close.png */; };
 		7C5ED8A71A0AF7F0006F92C3 /* icn_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A31A0AF7F0006F92C3 /* icn_close@2x.png */; };
 		7C5ED8A81A0AF7F0006F92C3 /* icn_close@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A41A0AF7F0006F92C3 /* icn_close@2x~ipad.png */; };
@@ -74,6 +75,8 @@
 		7C5E08D91ACC50DA00CF88B7 /* SessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionCell.m; sourceTree = "<group>"; };
 		7C5E08DB1ACC541E00CF88B7 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		7C5E08DC1ACC541E00CF88B7 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		7C5E08DE1ACC74CB00CF88B7 /* RecordingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingCell.h; sourceTree = "<group>"; };
+		7C5E08DF1ACC74CB00CF88B7 /* RecordingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingCell.m; sourceTree = "<group>"; };
 		7C5ED8A21A0AF7F0006F92C3 /* icn_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_close.png; sourceTree = "<group>"; };
 		7C5ED8A31A0AF7F0006F92C3 /* icn_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_close@2x.png"; sourceTree = "<group>"; };
 		7C5ED8A41A0AF7F0006F92C3 /* icn_close@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_close@2x~ipad.png"; sourceTree = "<group>"; };
@@ -160,6 +163,8 @@
 			children = (
 				7C5E08D81ACC50DA00CF88B7 /* SessionCell.h */,
 				7C5E08D91ACC50DA00CF88B7 /* SessionCell.m */,
+				7C5E08DE1ACC74CB00CF88B7 /* RecordingCell.h */,
+				7C5E08DF1ACC74CB00CF88B7 /* RecordingCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 				7CB9811818E3999E00893B60 /* main.m in Sources */,
 				7CB9814818E39EBC00893B60 /* Recording.m in Sources */,
 				7C5E08DA1ACC50DA00CF88B7 /* SessionCell.m in Sources */,
+				7C5E08E01ACC74CB00CF88B7 /* RecordingCell.m in Sources */,
 				7CB9815A18E6879D00893B60 /* SessionsViewController.m in Sources */,
 				7C4753AE1A30FA12006CDAD1 /* InfoViewController.m in Sources */,
 				7C6F7FAC18ECCEC00046F72E /* DataController.m in Sources */,

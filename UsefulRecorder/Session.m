@@ -8,27 +8,32 @@
 
 #import "Session.h"
 
+NSString * const kSessionTitleKey = @"kSessionTitleKey";
+NSString * const kSessionCreatedAtKey = @"kSessionCreatedAtKey";
+NSString * const kSessionRecordingsKey = @"kSessionRecordingsKey";
+
 @interface Session()
 
 @property (nonatomic, strong) NSMutableArray *recordings;
+@property (nonatomic, strong) NSDate *createdAt;
 
 @end
 
 @implementation Session
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
-    [aCoder encodeObject:self.recordings forKey:@"filePath"];
-    [aCoder encodeObject:self.createdAt forKey:@"createdAt"];
-    [aCoder encodeObject:self.title forKey:@"title"];
+    [aCoder encodeObject:self.title forKey:kSessionTitleKey];
+    [aCoder encodeObject:self.createdAt forKey:kSessionCreatedAtKey];
+    [aCoder encodeObject:self.recordings forKey:kSessionRecordingsKey];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [self init];
     
     if (self) {
-        self.recordings = [aDecoder decodeObjectForKey:@"filePath"];
-        self.createdAt = [aDecoder decodeObjectForKey:@"createdAt"];
-        self.title = [aDecoder decodeObjectForKey:@"title"];
+        self.title = [aDecoder decodeObjectForKey:kSessionTitleKey];
+        self.createdAt = [aDecoder decodeObjectForKey:kSessionCreatedAtKey];
+        self.recordings = [aDecoder decodeObjectForKey:kSessionRecordingsKey];
     }
     
     return self;
@@ -38,9 +43,9 @@
     Session *session = [[Session alloc] init];
     
     if (session) {
-        session.title = dictionary[@"title"];
-        session.createdAt = dictionary[@"createdAt"];
-        session.recordings = dictionary[@"recordings"];
+        session.title = dictionary[kSessionTitleKey];
+        session.createdAt = dictionary[kSessionCreatedAtKey];
+        session.recordings = dictionary[kSessionRecordingsKey];
     }
     
     return session;

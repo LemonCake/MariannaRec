@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-extern const NSString *kSessionTitleKey;
-
 @protocol SessionCellDelegate;
 
+@class Session;
+
 @interface SessionCell : UITableViewCell
+
+- (void)configureWithSession:(Session *)session;
 
 @property (nonatomic, assign) id<SessionCellDelegate>delegate;
 
@@ -22,6 +24,6 @@ extern const NSString *kSessionTitleKey;
 
 @optional
 
-- (void)sessionCellEdit:(SessionCell *)sessionCell;
+- (void)sessionCell:(SessionCell *)sessionCell onEdit:(Session *)session;
 
 @end
