@@ -23,4 +23,5 @@ typedef void (^DataControllerCompletionBlock)(BOOL success);
 
 - (NSString *)documentsDirectory;
 - (NSURL *)urlForRecording:(Recording *)recording;
+
 @end

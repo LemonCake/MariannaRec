@@ -11,7 +11,6 @@
 #import "DataController.h"
 #import "InfoViewController.h"
 #import "UIAlertView+Blocks.h"
-#import "SessionCell.h"
 
 @interface SessionsViewController () <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -74,8 +73,7 @@
         cell.textLabel.text = @"Start new session...";
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:SESSION_CELL];
-        SessionCell *tCell = (SessionCell *)cell;
-        tCell
+        cell.textLabel.text = [DataController sharedInstance].allSessions[indexPath.row - 1];
     }
     
     return cell;
