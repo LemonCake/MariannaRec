@@ -1,0 +1,676 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C4753A21A30F7CF006CDAD1 /* icn_sing_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */; };
+		7C4753A31A30F7CF006CDAD1 /* icn_sing_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */; };
+		7C4753A41A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */; };
+		7C4753A51A30F7CF006CDAD1 /* icn_sing_settings~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753A11A30F7CF006CDAD1 /* icn_sing_settings~ipad.png */; };
+		7C4753A91A30F8A1006CDAD1 /* share_facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753A61A30F8A1006CDAD1 /* share_facebook@2x.png */; };
+		7C4753AA1A30F8A1006CDAD1 /* share_facebook@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753A71A30F8A1006CDAD1 /* share_facebook@2x~ipad.png */; };
+		7C4753AB1A30F8A1006CDAD1 /* share_facebook~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753A81A30F8A1006CDAD1 /* share_facebook~ipad.png */; };
+		7C4753AE1A30FA12006CDAD1 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4753AD1A30FA12006CDAD1 /* InfoViewController.m */; };
+		7C4753B11A30FB31006CDAD1 /* btn_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753AF1A30FB31006CDAD1 /* btn_info.png */; };
+		7C4753B21A30FB31006CDAD1 /* btn_info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753B01A30FB31006CDAD1 /* btn_info@2x.png */; };
+		7C593BE61A09FB090027A611 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C593BE51A09FB090027A611 /* logo.png */; };
+		7C5E08DA1ACC50DA00CF88B7 /* SessionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E08D91ACC50DA00CF88B7 /* SessionCell.m */; };
+		7C5E08DD1ACC541E00CF88B7 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5E08DC1ACC541E00CF88B7 /* Session.m */; };
+		7C5ED8A61A0AF7F0006F92C3 /* icn_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A21A0AF7F0006F92C3 /* icn_close.png */; };
+		7C5ED8A71A0AF7F0006F92C3 /* icn_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A31A0AF7F0006F92C3 /* icn_close@2x.png */; };
+		7C5ED8A81A0AF7F0006F92C3 /* icn_close@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A41A0AF7F0006F92C3 /* icn_close@2x~ipad.png */; };
+		7C5ED8A91A0AF7F0006F92C3 /* icn_close~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C5ED8A51A0AF7F0006F92C3 /* icn_close~ipad.png */; };
+		7C6F7FAC18ECCEC00046F72E /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6F7FAB18ECCEC00046F72E /* DataController.m */; };
+		7CB9810C18E3999E00893B60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB9810B18E3999E00893B60 /* Foundation.framework */; };
+		7CB9810E18E3999E00893B60 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB9810D18E3999E00893B60 /* CoreGraphics.framework */; };
+		7CB9811018E3999E00893B60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB9810F18E3999E00893B60 /* UIKit.framework */; };
+		7CB9811618E3999E00893B60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9811418E3999E00893B60 /* InfoPlist.strings */; };
+		7CB9811818E3999E00893B60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9811718E3999E00893B60 /* main.m */; };
+		7CB9811C18E3999E00893B60 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9811B18E3999E00893B60 /* AppDelegate.m */; };
+		7CB9811F18E3999E00893B60 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9811D18E3999E00893B60 /* Main_iPhone.storyboard */; };
+		7CB9812218E3999E00893B60 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9812018E3999E00893B60 /* Main_iPad.storyboard */; };
+		7CB9812518E3999E00893B60 /* RecordingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9812418E3999E00893B60 /* RecordingsViewController.m */; };
+		7CB9812718E3999E00893B60 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9812618E3999E00893B60 /* Images.xcassets */; };
+		7CB9812E18E3999E00893B60 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB9812D18E3999E00893B60 /* XCTest.framework */; };
+		7CB9812F18E3999E00893B60 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB9810B18E3999E00893B60 /* Foundation.framework */; };
+		7CB9813018E3999E00893B60 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB9810F18E3999E00893B60 /* UIKit.framework */; };
+		7CB9813818E3999E00893B60 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7CB9813618E3999E00893B60 /* InfoPlist.strings */; };
+		7CB9813A18E3999E00893B60 /* UsefulRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9813918E3999E00893B60 /* UsefulRecorderTests.m */; };
+		7CB9814518E39B9800893B60 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB9814418E39B9800893B60 /* AVFoundation.framework */; };
+		7CB9814818E39EBC00893B60 /* Recording.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9814718E39EBC00893B60 /* Recording.m */; };
+		7CB9815A18E6879D00893B60 /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB9815918E6879D00893B60 /* SessionsViewController.m */; };
+		E28D73C66EFA4076AEB03605 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A2B647C5564872B1EBAE3A /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7CB9813118E3999E00893B60 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB9810018E3999E00893B60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CB9810718E3999E00893B60;
+			remoteInfo = UsefulRecorder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		40A2B647C5564872B1EBAE3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_sing_settings.png; sourceTree = "<group>"; };
+		7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_sing_settings@2x.png"; sourceTree = "<group>"; };
+		7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_sing_settings@2x~ipad.png"; sourceTree = "<group>"; };
+		7C4753A11A30F7CF006CDAD1 /* icn_sing_settings~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_sing_settings~ipad.png"; sourceTree = "<group>"; };
+		7C4753A61A30F8A1006CDAD1 /* share_facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_facebook@2x.png"; sourceTree = "<group>"; };
+		7C4753A71A30F8A1006CDAD1 /* share_facebook@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_facebook@2x~ipad.png"; sourceTree = "<group>"; };
+		7C4753A81A30F8A1006CDAD1 /* share_facebook~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_facebook~ipad.png"; sourceTree = "<group>"; };
+		7C4753AC1A30FA12006CDAD1 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		7C4753AD1A30FA12006CDAD1 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		7C4753AF1A30FB31006CDAD1 /* btn_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_info.png; sourceTree = "<group>"; };
+		7C4753B01A30FB31006CDAD1 /* btn_info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_info@2x.png"; sourceTree = "<group>"; };
+		7C593BE51A09FB090027A611 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		7C5E08D81ACC50DA00CF88B7 /* SessionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionCell.h; sourceTree = "<group>"; };
+		7C5E08D91ACC50DA00CF88B7 /* SessionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionCell.m; sourceTree = "<group>"; };
+		7C5E08DB1ACC541E00CF88B7 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		7C5E08DC1ACC541E00CF88B7 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		7C5ED8A21A0AF7F0006F92C3 /* icn_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_close.png; sourceTree = "<group>"; };
+		7C5ED8A31A0AF7F0006F92C3 /* icn_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_close@2x.png"; sourceTree = "<group>"; };
+		7C5ED8A41A0AF7F0006F92C3 /* icn_close@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_close@2x~ipad.png"; sourceTree = "<group>"; };
+		7C5ED8A51A0AF7F0006F92C3 /* icn_close~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_close~ipad.png"; sourceTree = "<group>"; };
+		7C6F7FAA18ECCEC00046F72E /* DataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
+		7C6F7FAB18ECCEC00046F72E /* DataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		7CB9810818E3999E00893B60 /* MariannaRec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MariannaRec.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB9810B18E3999E00893B60 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7CB9810D18E3999E00893B60 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7CB9810F18E3999E00893B60 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7CB9811318E3999E00893B60 /* MariannaRec-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MariannaRec-Info.plist"; sourceTree = "<group>"; };
+		7CB9811518E3999E00893B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7CB9811718E3999E00893B60 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7CB9811918E3999E00893B60 /* MariannaRec-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MariannaRec-Prefix.pch"; sourceTree = "<group>"; };
+		7CB9811A18E3999E00893B60 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7CB9811B18E3999E00893B60 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7CB9811E18E3999E00893B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		7CB9812118E3999E00893B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		7CB9812318E3999E00893B60 /* RecordingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordingsViewController.h; sourceTree = "<group>"; };
+		7CB9812418E3999E00893B60 /* RecordingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordingsViewController.m; sourceTree = "<group>"; };
+		7CB9812618E3999E00893B60 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7CB9812C18E3999E00893B60 /* MariannaRecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MariannaRecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB9812D18E3999E00893B60 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		7CB9813518E3999E00893B60 /* MariannaRecTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MariannaRecTests-Info.plist"; sourceTree = "<group>"; };
+		7CB9813718E3999E00893B60 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7CB9813918E3999E00893B60 /* UsefulRecorderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UsefulRecorderTests.m; sourceTree = "<group>"; };
+		7CB9814418E39B9800893B60 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7CB9814618E39EBC00893B60 /* Recording.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recording.h; sourceTree = "<group>"; };
+		7CB9814718E39EBC00893B60 /* Recording.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recording.m; sourceTree = "<group>"; };
+		7CB9815818E6879D00893B60 /* SessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsViewController.h; sourceTree = "<group>"; };
+		7CB9815918E6879D00893B60 /* SessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsViewController.m; sourceTree = "<group>"; };
+		D876125EA25D499789FAB479 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CB9810518E3999E00893B60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB9814518E39B9800893B60 /* AVFoundation.framework in Frameworks */,
+				7CB9810E18E3999E00893B60 /* CoreGraphics.framework in Frameworks */,
+				7CB9811018E3999E00893B60 /* UIKit.framework in Frameworks */,
+				7CB9810C18E3999E00893B60 /* Foundation.framework in Frameworks */,
+				E28D73C66EFA4076AEB03605 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CB9812918E3999E00893B60 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB9812E18E3999E00893B60 /* XCTest.framework in Frameworks */,
+				7CB9813018E3999E00893B60 /* UIKit.framework in Frameworks */,
+				7CB9812F18E3999E00893B60 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C593BE41A09FAFB0027A611 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */,
+				7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */,
+				7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */,
+				7C4753A11A30F7CF006CDAD1 /* icn_sing_settings~ipad.png */,
+				7C5ED8A21A0AF7F0006F92C3 /* icn_close.png */,
+				7C5ED8A31A0AF7F0006F92C3 /* icn_close@2x.png */,
+				7C5ED8A41A0AF7F0006F92C3 /* icn_close@2x~ipad.png */,
+				7C5ED8A51A0AF7F0006F92C3 /* icn_close~ipad.png */,
+				7C593BE51A09FB090027A611 /* logo.png */,
+				7C4753A61A30F8A1006CDAD1 /* share_facebook@2x.png */,
+				7C4753A71A30F8A1006CDAD1 /* share_facebook@2x~ipad.png */,
+				7C4753A81A30F8A1006CDAD1 /* share_facebook~ipad.png */,
+				7C4753AF1A30FB31006CDAD1 /* btn_info.png */,
+				7C4753B01A30FB31006CDAD1 /* btn_info@2x.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		7C5E08D71ACC50B600CF88B7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C5E08D81ACC50DA00CF88B7 /* SessionCell.h */,
+				7C5E08D91ACC50DA00CF88B7 /* SessionCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7CB980FF18E3999E00893B60 = {
+			isa = PBXGroup;
+			children = (
+				7CB9811118E3999E00893B60 /* MariannaRecorder */,
+				7CB9813318E3999E00893B60 /* MariannaRecorderTests */,
+				7CB9810A18E3999E00893B60 /* Frameworks */,
+				7CB9810918E3999E00893B60 /* Products */,
+				D876125EA25D499789FAB479 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		7CB9810918E3999E00893B60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CB9810818E3999E00893B60 /* MariannaRec.app */,
+				7CB9812C18E3999E00893B60 /* MariannaRecTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CB9810A18E3999E00893B60 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CB9814418E39B9800893B60 /* AVFoundation.framework */,
+				7CB9810B18E3999E00893B60 /* Foundation.framework */,
+				7CB9810D18E3999E00893B60 /* CoreGraphics.framework */,
+				7CB9810F18E3999E00893B60 /* UIKit.framework */,
+				7CB9812D18E3999E00893B60 /* XCTest.framework */,
+				40A2B647C5564872B1EBAE3A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7CB9811118E3999E00893B60 /* MariannaRecorder */ = {
+			isa = PBXGroup;
+			children = (
+				7C593BE41A09FAFB0027A611 /* Image */,
+				7CB9814318E39AE600893B60 /* Classes */,
+				7CB9815B18E687AB00893B60 /* ViewControllers */,
+				7C5E08D71ACC50B600CF88B7 /* Views */,
+				7CB9811A18E3999E00893B60 /* AppDelegate.h */,
+				7CB9811B18E3999E00893B60 /* AppDelegate.m */,
+				7CB9811D18E3999E00893B60 /* Main_iPhone.storyboard */,
+				7CB9812018E3999E00893B60 /* Main_iPad.storyboard */,
+				7CB9812618E3999E00893B60 /* Images.xcassets */,
+				7CB9811218E3999E00893B60 /* Supporting Files */,
+			);
+			name = MariannaRecorder;
+			path = UsefulRecorder;
+			sourceTree = "<group>";
+		};
+		7CB9811218E3999E00893B60 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CB9811318E3999E00893B60 /* MariannaRec-Info.plist */,
+				7CB9811418E3999E00893B60 /* InfoPlist.strings */,
+				7CB9811718E3999E00893B60 /* main.m */,
+				7CB9811918E3999E00893B60 /* MariannaRec-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CB9813318E3999E00893B60 /* MariannaRecorderTests */ = {
+			isa = PBXGroup;
+			children = (
+				7CB9813918E3999E00893B60 /* UsefulRecorderTests.m */,
+				7CB9813418E3999E00893B60 /* Supporting Files */,
+			);
+			name = MariannaRecorderTests;
+			path = UsefulRecorderTests;
+			sourceTree = "<group>";
+		};
+		7CB9813418E3999E00893B60 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7CB9813518E3999E00893B60 /* MariannaRecTests-Info.plist */,
+				7CB9813618E3999E00893B60 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CB9814318E39AE600893B60 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7CB9814618E39EBC00893B60 /* Recording.h */,
+				7CB9814718E39EBC00893B60 /* Recording.m */,
+				7C5E08DB1ACC541E00CF88B7 /* Session.h */,
+				7C5E08DC1ACC541E00CF88B7 /* Session.m */,
+				7C6F7FAA18ECCEC00046F72E /* DataController.h */,
+				7C6F7FAB18ECCEC00046F72E /* DataController.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		7CB9815B18E687AB00893B60 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7CB9812318E3999E00893B60 /* RecordingsViewController.h */,
+				7CB9812418E3999E00893B60 /* RecordingsViewController.m */,
+				7CB9815818E6879D00893B60 /* SessionsViewController.h */,
+				7CB9815918E6879D00893B60 /* SessionsViewController.m */,
+				7C4753AC1A30FA12006CDAD1 /* InfoViewController.h */,
+				7C4753AD1A30FA12006CDAD1 /* InfoViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CB9810718E3999E00893B60 /* MariannaRec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CB9813D18E3999E00893B60 /* Build configuration list for PBXNativeTarget "MariannaRec" */;
+			buildPhases = (
+				CBBCA8D136FC4374AC7B5A2D /* Check Pods Manifest.lock */,
+				7CB9810418E3999E00893B60 /* Sources */,
+				7CB9810518E3999E00893B60 /* Frameworks */,
+				7CB9810618E3999E00893B60 /* Resources */,
+				D6FE93A96FA64294B015B80A /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MariannaRec;
+			productName = UsefulRecorder;
+			productReference = 7CB9810818E3999E00893B60 /* MariannaRec.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7CB9812B18E3999E00893B60 /* MariannaRecTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CB9814018E3999E00893B60 /* Build configuration list for PBXNativeTarget "MariannaRecTests" */;
+			buildPhases = (
+				7CB9812818E3999E00893B60 /* Sources */,
+				7CB9812918E3999E00893B60 /* Frameworks */,
+				7CB9812A18E3999E00893B60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7CB9813218E3999E00893B60 /* PBXTargetDependency */,
+			);
+			name = MariannaRecTests;
+			productName = UsefulRecorderTests;
+			productReference = 7CB9812C18E3999E00893B60 /* MariannaRecTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CB9810018E3999E00893B60 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Joshua Wu";
+				TargetAttributes = {
+					7CB9810718E3999E00893B60 = {
+						DevelopmentTeam = 9UC824J6W7;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					7CB9812B18E3999E00893B60 = {
+						TestTargetID = 7CB9810718E3999E00893B60;
+					};
+				};
+			};
+			buildConfigurationList = 7CB9810318E3999E00893B60 /* Build configuration list for PBXProject "MariannaRec" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7CB980FF18E3999E00893B60;
+			productRefGroup = 7CB9810918E3999E00893B60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CB9810718E3999E00893B60 /* MariannaRec */,
+				7CB9812B18E3999E00893B60 /* MariannaRecTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7CB9810618E3999E00893B60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C4753A91A30F8A1006CDAD1 /* share_facebook@2x.png in Resources */,
+				7CB9812218E3999E00893B60 /* Main_iPad.storyboard in Resources */,
+				7C5ED8A61A0AF7F0006F92C3 /* icn_close.png in Resources */,
+				7C4753A31A30F7CF006CDAD1 /* icn_sing_settings@2x.png in Resources */,
+				7C4753A41A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png in Resources */,
+				7C4753A21A30F7CF006CDAD1 /* icn_sing_settings.png in Resources */,
+				7C4753AB1A30F8A1006CDAD1 /* share_facebook~ipad.png in Resources */,
+				7C5ED8A81A0AF7F0006F92C3 /* icn_close@2x~ipad.png in Resources */,
+				7C593BE61A09FB090027A611 /* logo.png in Resources */,
+				7C5ED8A71A0AF7F0006F92C3 /* icn_close@2x.png in Resources */,
+				7C4753A51A30F7CF006CDAD1 /* icn_sing_settings~ipad.png in Resources */,
+				7C4753B21A30FB31006CDAD1 /* btn_info@2x.png in Resources */,
+				7C4753B11A30FB31006CDAD1 /* btn_info.png in Resources */,
+				7C5ED8A91A0AF7F0006F92C3 /* icn_close~ipad.png in Resources */,
+				7CB9812718E3999E00893B60 /* Images.xcassets in Resources */,
+				7CB9811F18E3999E00893B60 /* Main_iPhone.storyboard in Resources */,
+				7CB9811618E3999E00893B60 /* InfoPlist.strings in Resources */,
+				7C4753AA1A30F8A1006CDAD1 /* share_facebook@2x~ipad.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CB9812A18E3999E00893B60 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB9813818E3999E00893B60 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CBBCA8D136FC4374AC7B5A2D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D6FE93A96FA64294B015B80A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CB9810418E3999E00893B60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB9812518E3999E00893B60 /* RecordingsViewController.m in Sources */,
+				7CB9811C18E3999E00893B60 /* AppDelegate.m in Sources */,
+				7CB9811818E3999E00893B60 /* main.m in Sources */,
+				7CB9814818E39EBC00893B60 /* Recording.m in Sources */,
+				7C5E08DA1ACC50DA00CF88B7 /* SessionCell.m in Sources */,
+				7CB9815A18E6879D00893B60 /* SessionsViewController.m in Sources */,
+				7C4753AE1A30FA12006CDAD1 /* InfoViewController.m in Sources */,
+				7C6F7FAC18ECCEC00046F72E /* DataController.m in Sources */,
+				7C5E08DD1ACC541E00CF88B7 /* Session.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CB9812818E3999E00893B60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CB9813A18E3999E00893B60 /* UsefulRecorderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7CB9813218E3999E00893B60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CB9810718E3999E00893B60 /* MariannaRec */;
+			targetProxy = 7CB9813118E3999E00893B60 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7CB9811418E3999E00893B60 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CB9811518E3999E00893B60 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7CB9811D18E3999E00893B60 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CB9811E18E3999E00893B60 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		7CB9812018E3999E00893B60 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CB9812118E3999E00893B60 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		7CB9813618E3999E00893B60 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CB9813718E3999E00893B60 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7CB9813B18E3999E00893B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7CB9813C18E3999E00893B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7CB9813E18E3999E00893B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D876125EA25D499789FAB479 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UsefulRecorder/MariannaRec-Prefix.pch";
+				INFOPLIST_FILE = "UsefulRecorder/MariannaRec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = MariannaRec;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7CB9813F18E3999E00893B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D876125EA25D499789FAB479 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UsefulRecorder/MariannaRec-Prefix.pch";
+				INFOPLIST_FILE = "UsefulRecorder/MariannaRec-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = MariannaRec;
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		7CB9814118E3999E00893B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UsefulRecorder.app/UsefulRecorder";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UsefulRecorder/UsefulRecorder-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UsefulRecorderTests/MariannaRecTests-Info.plist";
+				PRODUCT_NAME = MariannaRecTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		7CB9814218E3999E00893B60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UsefulRecorder.app/UsefulRecorder";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UsefulRecorder/UsefulRecorder-Prefix.pch";
+				INFOPLIST_FILE = "UsefulRecorderTests/MariannaRecTests-Info.plist";
+				PRODUCT_NAME = MariannaRecTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7CB9810318E3999E00893B60 /* Build configuration list for PBXProject "MariannaRec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CB9813B18E3999E00893B60 /* Debug */,
+				7CB9813C18E3999E00893B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CB9813D18E3999E00893B60 /* Build configuration list for PBXNativeTarget "MariannaRec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CB9813E18E3999E00893B60 /* Debug */,
+				7CB9813F18E3999E00893B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CB9814018E3999E00893B60 /* Build configuration list for PBXNativeTarget "MariannaRecTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CB9814118E3999E00893B60 /* Debug */,
+				7CB9814218E3999E00893B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7CB9810018E3999E00893B60 /* Project object */;
+}
