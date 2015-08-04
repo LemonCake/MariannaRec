@@ -142,6 +142,7 @@
                                        otherButtonTitles:@"Rename", nil];
     
     av.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [av textFieldAtIndex:0].text = session.title;
     
     MagicBlockWeakSelf weakSelf = self;
     
