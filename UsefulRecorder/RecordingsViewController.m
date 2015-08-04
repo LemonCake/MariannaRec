@@ -15,7 +15,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-@interface RecordingsViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioRecorderDelegate, RecordingCellDelegate>
+@interface RecordingsViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioRecorderDelegate, RecordingCellDelegate, AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) AVAudioRecorder *audioRecorder;
@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (nonatomic, strong) NSTimer *updateTimer;
 @property (weak, nonatomic) IBOutlet UISlider *timeSeeker;
+@property (nonatomic, strong) Recording *currentRecording;
 
 @end
 
@@ -152,6 +153,7 @@
         return;
     }
     
+    self.audioPlayer.delegate = self;
     [self.audioPlayer play];
     
     self.timeSeeker.maximumValue = (int)self.audioPlayer.duration;
@@ -162,6 +164,9 @@
     [UIView animateWithDuration:0.3f animations:^{
         self.timeSeeker.alpha = 1.0f;
     }];
+    
+    self.currentRecording = recording;
+    [self.tableView reloadData];
 }
 
 - (void)startTimer {
@@ -184,6 +189,17 @@
     NSInteger seconds = ti % 60;
     NSInteger minutes = (ti / 60) % 60;
     return [NSString stringWithFormat:@"%li:%02li", (long)minutes, (long)seconds];
+}
+
+#pragma mark - AVAudioPlayerDelegate
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    NSUInteger nextIndex = [self.session.recordings indexOfObject:self.currentRecording] + 1;
+    
+    if (nextIndex < self.session.recordings.count) {
+        Recording *next = self.session.recordings[nextIndex];
+        [self playRecording:next];
+    }
 }
 
 #pragma mark - AVAudioRecorderDelegate
@@ -219,6 +235,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    RecordingCell *rCell = (RecordingCell *)cell;
+    if (rCell.recording == self.currentRecording) {
+        [rCell setHighlighted:YES];
+    }
 }
 
 #pragma mark - UITableViewDelegate methods
