@@ -56,9 +56,16 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
     if (oldSessions) {
         for (NSString *key in oldSessions) {
             NSMutableArray *oldRecordings = oldSessions[key];
+            
+            NSDate *createdAt = [NSDate date];
+            
+            if (oldRecordings.count > 0 && ((Recording *)oldRecordings.firstObject).createdAt) {
+                createdAt = ((Recording *)oldRecordings.firstObject).createdAt;
+            }
+            
             NSDictionary *configDictionary = @{kSessionTitleKey : key,
                                                kSessionRecordingsKey : oldRecordings,
-                                               kSessionCreatedAtKey : (oldRecordings.count > 0 ? ((Recording *)oldRecordings.firstObject).createdAt : [NSDate date])};
+                                               kSessionCreatedAtKey : createdAt};
             [self.data addObject:[Session sessionFromDictionary:configDictionary]];
         }
         
