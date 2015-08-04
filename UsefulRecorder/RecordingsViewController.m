@@ -254,13 +254,14 @@
                                                 delegate:self
                                        cancelButtonTitle:@"Cancel"
                                        otherButtonTitles:@"Rename", nil];
-    
     av.alertViewStyle = UIAlertViewStylePlainTextInput;
     
+    [av textFieldAtIndex:0].text = recordingCell.recording.title;
+
     MagicBlockWeakSelf weakSelf = self;
     
     av.tapBlock = ^(UIAlertView *alertView, NSInteger buttonIndex) {
-        if (buttonIndex == alertView.firstOtherButtonIndex) {
+        if (buttonIndex == alertView.firstOtherButtonIndex && [av textFieldAtIndex:0].text.length > 0) {
             [[DataController sharedInstance] renameTrack:track title:[alertView textFieldAtIndex:0].text];
             [weakSelf.tableView reloadData];
         }

@@ -17,6 +17,7 @@
 - (void)configureWithRecording:(Recording *)recording;
 
 @property (nonatomic, assign) id<RecordingCellDelegate> delegate;
+@property (strong, nonatomic, readonly) Recording *recording;
 
 @end
 

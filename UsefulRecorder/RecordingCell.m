@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) Recording *recording;
+
 @end
 
 @implementation RecordingCell
