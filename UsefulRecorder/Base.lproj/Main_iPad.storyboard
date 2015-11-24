@@ -46,7 +46,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Hp-ti-t0x">
                                                     <rect key="frame" x="675" y="-2" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="email" backgroundImage="email.png"/>
+                                                    <state key="normal" backgroundImage="email.png"/>
                                                     <connections>
                                                         <action selector="onEmail:" destination="LyL-XL-LST" eventType="touchUpInside" id="NeK-kw-k6Y"/>
                                                     </connections>

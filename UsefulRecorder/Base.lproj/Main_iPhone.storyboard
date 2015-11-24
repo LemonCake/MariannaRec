@@ -28,7 +28,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rg1-hb-REI">
                                                     <rect key="frame" x="229" y="-2" width="40" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="email" backgroundImage="email.png"/>
+                                                    <state key="normal" backgroundImage="email.png"/>
                                                     <connections>
                                                         <action selector="onEmail:" destination="zU0-Bm-QkM" eventType="touchUpInside" id="yMk-hd-pr9"/>
                                                     </connections>
