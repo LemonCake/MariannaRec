@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C2829221C043080001EF579 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C2829211C043080001EF579 /* email.png */; };
 		7C4753A21A30F7CF006CDAD1 /* icn_sing_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */; };
 		7C4753A31A30F7CF006CDAD1 /* icn_sing_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */; };
 		7C4753A41A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		40A2B647C5564872B1EBAE3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C2829211C043080001EF579 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_sing_settings.png; sourceTree = "<group>"; };
 		7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_sing_settings@2x.png"; sourceTree = "<group>"; };
 		7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_sing_settings@2x~ipad.png"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		7C593BE41A09FAFB0027A611 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				7C2829211C043080001EF579 /* email.png */,
 				7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */,
 				7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */,
 				7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */,
@@ -366,6 +369,7 @@
 				7CB9812218E3999E00893B60 /* Main_iPad.storyboard in Resources */,
 				7C5ED8A61A0AF7F0006F92C3 /* icn_close.png in Resources */,
 				7C4753A31A30F7CF006CDAD1 /* icn_sing_settings@2x.png in Resources */,
+				7C2829221C043080001EF579 /* email.png in Resources */,
 				7C4753A41A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png in Resources */,
 				7C4753A21A30F7CF006CDAD1 /* icn_sing_settings.png in Resources */,
 				7C4753AB1A30F8A1006CDAD1 /* share_facebook~ipad.png in Resources */,

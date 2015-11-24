@@ -43,6 +43,14 @@
                                                         <action selector="onEdit:" destination="LyL-XL-LST" eventType="touchUpInside" id="4yM-ge-l7p"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Hp-ti-t0x">
+                                                    <rect key="frame" x="675" y="-2" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="email" backgroundImage="email.png"/>
+                                                    <connections>
+                                                        <action selector="onEmail:" destination="LyL-XL-LST" eventType="touchUpInside" id="NeK-kw-k6Y"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -327,6 +335,7 @@
     </scenes>
     <resources>
         <image name="btn_info.png" width="16" height="16"/>
+        <image name="email.png" width="256" height="256"/>
         <image name="icn_close.png" width="23" height="23"/>
         <image name="icn_sing_settings.png" width="83" height="83"/>
         <image name="logo.png" width="271" height="89"/>

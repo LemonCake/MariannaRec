@@ -25,5 +25,5 @@
 
 @optional
 - (void)recordingCell:(RecordingCell *)recordingCell onEdit:(Recording *)recording;
-
+- (void)recordingCell:(RecordingCell *)recordingCell onEmail:(Recording *)recording;
 @end

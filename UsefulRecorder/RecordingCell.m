@@ -29,5 +29,10 @@
     }
 }
 
+- (IBAction)onEmail:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(recordingCell:onEmail:)]) {
+        [self.delegate recordingCell:self onEmail:self.recording];
+    }
+}
 
 @end

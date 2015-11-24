@@ -13,9 +13,10 @@
 #import "Session.h"
 #import "RecordingCell.h"
 
+#import <MessageUI/MessageUI.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface RecordingsViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioRecorderDelegate, RecordingCellDelegate, AVAudioPlayerDelegate>
+@interface RecordingsViewController () <UITableViewDataSource, UITableViewDelegate, AVAudioRecorderDelegate, RecordingCellDelegate, AVAudioPlayerDelegate, MFMailComposeViewControllerDelegate>
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 @property (nonatomic, strong) AVAudioRecorder *audioRecorder;
@@ -293,6 +294,30 @@
     };
     
     [av show];
+}
+
+- (void)recordingCell:(RecordingCell *)recordingCell onEmail:(Recording *)recording {
+    // From within your active view controller
+    if([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
+        mailCont.mailComposeDelegate = self;
+        
+        [mailCont setSubject:[NSString stringWithFormat:@"%@ %@", self.session.title, recording.title]];
+        NSData *audioData = [NSData dataWithContentsOfURL:[[DataController sharedInstance] urlForRecording:recording]];
+        NSString *audioFile = [NSString stringWithFormat:@"%@-%@.aac", self.session.title, recording.title];
+        [mailCont addAttachmentData:audioData mimeType:@"audio/aac" fileName:audioFile];
+        [mailCont setMessageBody:@"backing it up!" isHTML:NO];
+
+        [self presentViewController:mailCont animated:YES completion:nil];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"oops!" message:@"Please setup your email and try again!" delegate:nil cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
+}
+
+// Then implement the delegate method
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
