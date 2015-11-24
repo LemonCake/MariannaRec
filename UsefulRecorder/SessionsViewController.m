@@ -41,6 +41,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -53,6 +58,20 @@
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[InfoViewController instantiate]];
     [self.navigationController presentViewController:navController animated:YES completion:nil];
 }
+
+- (IBAction)onSortOrderButton:(id)sender {
+    UIButton *sortButton = (UIButton *)sender;
+    if (sortButton.tag == 100) {
+        // sort by last updated
+        [[DataController sharedInstance] sortByUpdatedAt];
+    } else if (sortButton.tag == 200) {
+        // sort by created
+        [[DataController sharedInstance] sortByCreatedAt];
+    }
+    
+    [self.tableView reloadData];
+}
+
 
 #pragma mark - UITableViewDataSource methods
 
@@ -67,8 +86,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *SESSION_CELL = @"SESSION_CELL";
     static NSString *NEW_SESSION_CELL = @"NEW_SESSION_CELL";
-    
-
     
     if (indexPath.row == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NEW_SESSION_CELL];

@@ -16,6 +16,8 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 @interface DataController()
 
 @property (nonatomic, strong) NSMutableArray *data;
+@property (nonatomic, strong) NSSortDescriptor *sortDescriptor;
+@property (nonatomic, assign) BOOL sortAsc;
 
 @end
 
@@ -28,7 +30,7 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
     dispatch_once(&onceToken, ^{
         dataController = [[DataController alloc] init];
     });
-    
+
     return dataController;
 }
 
@@ -43,6 +45,8 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 }
 
 - (void)loadData {
+    self.sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:self.sortAsc];
+    
     self.data = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kSessionsDataKey]];
     
     if (!self.data) {
@@ -72,13 +76,15 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
         [[NSUserDefaults standardUserDefaults] setObject:nil forKey:kOldSessionsKey];
         [self save];
     }
+
+    [self sortByUpdatedAt];
 }
 
 - (void)createNewSession:(NSString *)session completion:(DataControllerCompletionBlock)completion {
     Session *newSession = [Session sessionFromDictionary:@{kSessionTitleKey : session,
                                                            kSessionCreatedAtKey : [NSDate date],
                                                            kSessionRecordingsKey : [NSMutableArray array]}];
-    [self.data addObject:newSession];
+    [self.data insertObject:newSession atIndex:0];
     [self save];
         
     if (completion) { completion(); }
@@ -104,13 +110,13 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 }
 
 - (void)createRecording:(Recording *)recording session:(Session *)session {
-    [session.recordings addObject:recording];
+    [session addNewRecording:recording];
     [self save];
 }
 
 - (void)deleteRecording:(Recording *)recording session:(Session *)session {
     [self deleteFileAtPath:[self urlForRecording:recording]];
-    [session.recordings removeObject:recording];
+    [session addNewRecording:recording];
     [self save];
 }
 
@@ -129,6 +135,8 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 }
 
 - (void)save {
+    [self.data sortUsingDescriptors:@[self.sortDescriptor]];
+     
     [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.data] forKey:kSessionsDataKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -142,5 +150,25 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
     return [NSURL fileURLWithPathComponents:pathComponents];
 }
 
+#pragma mark - sorting order
+
+- (void)sortByCreatedAt {
+    if (self.sortDescriptor && [self.sortDescriptor.key isEqualToString:@"createdAt"]) {
+        self.sortAsc = !self.sortAsc;
+    }
+    
+    self.sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:self.sortAsc];
+    [self.data sortUsingDescriptors:@[self.sortDescriptor]];
+}
+
+- (void)sortByUpdatedAt {
+    if (self.sortDescriptor && [self.sortDescriptor.key isEqualToString:@"updatedAt"]) {
+        self.sortAsc = !self.sortAsc;
+    }
+
+    self.sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"updatedAt" ascending:self.sortAsc];
+    [self.data sortUsingDescriptors:@[self.sortDescriptor]];
+
+}
 
 @end

@@ -12,12 +12,17 @@ extern NSString *const kSessionTitleKey;
 extern NSString *const kSessionCreatedAtKey;
 extern NSString *const kSessionRecordingsKey;
 
+@class Recording;
+
 @interface Session : NSObject <NSCoding>
 
 + (Session *)sessionFromDictionary:(NSDictionary *)dictionary;
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong, readonly) NSDate *createdAt;
+@property (nonatomic, strong, readonly) NSDate *updatedAt;
 @property (nonatomic, strong, readonly) NSMutableArray *recordings;
+
+- (void)addNewRecording:(Recording *)recording;
 
 @end

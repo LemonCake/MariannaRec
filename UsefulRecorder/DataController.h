@@ -25,4 +25,7 @@ typedef void (^DataControllerCompletionBlock)(void);
 - (NSString *)documentsDirectory;
 - (NSURL *)urlForRecording:(Recording *)recording;
 
+- (void)sortByCreatedAt;
+- (void)sortByUpdatedAt;
+
 @end

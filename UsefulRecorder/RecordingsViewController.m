@@ -208,6 +208,8 @@
     Recording *thisTrack = [[Recording alloc] init];
     thisTrack.filePath = recorder.url.pathComponents.lastObject;
     thisTrack.title = [NSString stringWithFormat:@"Track %lu", (unsigned long)self.session.recordings.count];
+    thisTrack.createdAt = [NSDate date];
+    
     [[DataController sharedInstance] createRecording:thisTrack session:self.session];
     
     [self.tableView reloadData];
