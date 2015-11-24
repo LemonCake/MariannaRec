@@ -39,6 +39,10 @@ NSString * const kSessionRecordingsKey = @"kSessionRecordingsKey";
         self.createdAt = [aDecoder decodeObjectForKey:kSessionCreatedAtKey];
         self.updatedAt = [aDecoder decodeObjectForKey:kSessionUpdatedAtKey];
         self.recordings = [aDecoder decodeObjectForKey:kSessionRecordingsKey];
+        
+        if (!self.updatedAt) {
+            self.updatedAt = self.createdAt;
+        }
     }
     
     return self;
@@ -51,11 +55,6 @@ NSString * const kSessionRecordingsKey = @"kSessionRecordingsKey";
         session.title = dictionary[kSessionTitleKey];
         session.createdAt = dictionary[kSessionCreatedAtKey];
         session.updatedAt = dictionary[kSessionUpdatedAtKey];
-        
-        if (!session.updatedAt) {
-            session.updatedAt = session.createdAt;
-        }
-        
         session.recordings = dictionary[kSessionRecordingsKey];
     }
     
