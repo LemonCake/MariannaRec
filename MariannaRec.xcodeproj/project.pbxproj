@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C2829221C043080001EF579 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C2829211C043080001EF579 /* email.png */; };
+		7C2829241C043395001EF579 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C2829231C043395001EF579 /* Launch Screen.storyboard */; };
 		7C4753A21A30F7CF006CDAD1 /* icn_sing_settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */; };
 		7C4753A31A30F7CF006CDAD1 /* icn_sing_settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */; };
 		7C4753A41A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		40A2B647C5564872B1EBAE3A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2829211C043080001EF579 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		7C2829231C043395001EF579 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7C47539E1A30F7CF006CDAD1 /* icn_sing_settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icn_sing_settings.png; sourceTree = "<group>"; };
 		7C47539F1A30F7CF006CDAD1 /* icn_sing_settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_sing_settings@2x.png"; sourceTree = "<group>"; };
 		7C4753A01A30F7CF006CDAD1 /* icn_sing_settings@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icn_sing_settings@2x~ipad.png"; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				7CB9812018E3999E00893B60 /* Main_iPad.storyboard */,
 				7CB9812618E3999E00893B60 /* Images.xcassets */,
 				7CB9811218E3999E00893B60 /* Supporting Files */,
+				7C2829231C043395001EF579 /* Launch Screen.storyboard */,
 			);
 			name = MariannaRecorder;
 			path = UsefulRecorder;
@@ -383,6 +386,7 @@
 				7CB9812718E3999E00893B60 /* Images.xcassets in Resources */,
 				7CB9811F18E3999E00893B60 /* Main_iPhone.storyboard in Resources */,
 				7CB9811618E3999E00893B60 /* InfoPlist.strings in Resources */,
+				7C2829241C043395001EF579 /* Launch Screen.storyboard in Resources */,
 				7C4753AA1A30F8A1006CDAD1 /* share_facebook@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,7 +583,6 @@
 			baseConfigurationReference = D876125EA25D499789FAB479 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -597,7 +600,6 @@
 			baseConfigurationReference = D876125EA25D499789FAB479 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
