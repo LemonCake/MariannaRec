@@ -89,7 +89,7 @@
     // Set the audio file
     NSString *dateString = [NSDateFormatter localizedStringFromDate:[NSDate date]
                                                           dateStyle:NSDateFormatterShortStyle
-                                                          timeStyle:NSDateFormatterShortStyle];
+                                                          timeStyle:NSDateFormatterLongStyle];
     
     NSArray *pathComponents = @[[[DataController sharedInstance] documentsDirectory],
                                 [NSString stringWithFormat:@"recording_%@_track_%lu_%lu.aac", self.session.title, self.session.recordings.count, (unsigned long) dateString.hash]];
