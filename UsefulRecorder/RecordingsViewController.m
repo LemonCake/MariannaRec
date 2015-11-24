@@ -92,7 +92,7 @@
                                                           timeStyle:NSDateFormatterShortStyle];
     
     NSArray *pathComponents = @[[[DataController sharedInstance] documentsDirectory],
-                                [NSString stringWithFormat:@"recording_%@_track_%lu_%lu.aac", self.session.title, self.session.recordings.count + 1, (unsigned long) dateString.hash]];
+                                [NSString stringWithFormat:@"recording_%@_track_%lu_%lu.aac", self.session.title, self.session.recordings.count, (unsigned long) dateString.hash]];
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
     
     // Setup audio session
