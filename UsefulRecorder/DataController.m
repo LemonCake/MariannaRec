@@ -45,8 +45,6 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 }
 
 - (void)loadData {
-    self.sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createdAt" ascending:self.sortAsc];
-    
     self.data = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kSessionsDataKey]];
     
     if (!self.data) {
@@ -94,7 +92,7 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
         }
     }
     
-    self.sortAsc = YES; // default to sort ascending
+    self.sortAsc = NO; // default to sort descending
     [self sortByUpdatedAt];
 }
 
