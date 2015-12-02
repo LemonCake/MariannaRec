@@ -77,6 +77,24 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
         [self save];
     }
 
+    // due to track deletion bug, prune tracks that don't exist anymore
+    for (Session *session in self.data) {
+        NSMutableArray *recordingToDelete = [NSMutableArray array];
+        
+        for (Recording *recording in session.recordings) {
+            NSURL *filePath = [self urlForRecording:recording];
+            if (![[NSFileManager defaultManager] fileExistsAtPath:filePath.path]) {
+                [self deleteFileAtPath:[self urlForRecording:recording]];
+                [recordingToDelete addObject:recording];
+            }
+        }
+        
+        for (Recording *deleteRecording in recordingToDelete) {
+            [session deleteRecording:deleteRecording];
+        }
+    }
+    
+    self.sortAsc = YES; // default to sort ascending
     [self sortByUpdatedAt];
 }
 
@@ -100,9 +118,9 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 }
 
 - (void)deleteFileAtPath:(NSURL *)filePath {
-    if ([[NSFileManager defaultManager] isDeletableFileAtPath:filePath.absoluteString]) {
+    if ([[NSFileManager defaultManager] isDeletableFileAtPath:filePath.path]) {
         NSError *error;
-        BOOL success = [[NSFileManager defaultManager] removeItemAtPath:filePath.absoluteString error:&error];
+        BOOL success = [[NSFileManager defaultManager] removeItemAtPath:filePath.path error:&error];
         if (!success) {
             NSLog(@"Error removing file at path: %@", error.localizedDescription);
         }
@@ -116,7 +134,7 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 
 - (void)deleteRecording:(Recording *)recording session:(Session *)session {
     [self deleteFileAtPath:[self urlForRecording:recording]];
-    [session addNewRecording:recording];
+    [session deleteRecording:recording];
     [self save];
 }
 

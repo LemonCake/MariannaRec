@@ -24,5 +24,6 @@ extern NSString *const kSessionRecordingsKey;
 @property (nonatomic, strong, readonly) NSMutableArray *recordings;
 
 - (void)addNewRecording:(Recording *)recording;
+- (void)deleteRecording:(Recording *)recording;
 
 @end

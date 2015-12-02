@@ -68,4 +68,9 @@ NSString * const kSessionRecordingsKey = @"kSessionRecordingsKey";
     [self.recordings addObject:recording];
 }
 
+- (void)deleteRecording:(Recording *)recording {
+    self.updatedAt = [NSDate date];
+    [self.recordings removeObject:recording];
+}
+
 @end
