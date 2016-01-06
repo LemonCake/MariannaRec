@@ -45,7 +45,9 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 }
 
 - (void)loadData {
-    self.data = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kSessionsDataKey]];
+    if ([[NSUserDefaults standardUserDefaults] dataForKey:kSessionsDataKey]) {
+        self.data = [NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:kSessionsDataKey]];
+    }
     
     if (!self.data) {
         self.data = [NSMutableArray array];
@@ -151,10 +153,12 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
 }
 
 - (void)save {
-    [self.data sortUsingDescriptors:@[self.sortDescriptor]];
-     
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.data] forKey:kSessionsDataKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    if (self.data.count > 0) {
+        [self.data sortUsingDescriptors:@[self.sortDescriptor]];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.data] forKey:kSessionsDataKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 - (NSString *)documentsDirectory {
