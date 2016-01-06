@@ -91,8 +91,12 @@
                                                           dateStyle:NSDateFormatterShortStyle
                                                           timeStyle:NSDateFormatterLongStyle];
     
-    NSArray *pathComponents = @[[[DataController sharedInstance] documentsDirectory],
-                                [NSString stringWithFormat:@"recording_%@_track_%lu_%lu.aac", self.session.title, self.session.recordings.count, (unsigned long) dateString.hash]];
+    // Generate file name and guard against illegal characters
+    NSString *fileName = [NSString stringWithFormat:@"recording_%@_track_%lu_%lu.aac", self.session.title, (unsigned long)self.session.recordings.count, (unsigned long) dateString.hash];
+    NSCharacterSet* illegalFileNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"/\\?%*|\"<>"];
+    fileName = [[fileName componentsSeparatedByCharactersInSet:illegalFileNameCharacters] componentsJoinedByString:@"_"];
+    
+    NSArray *pathComponents = @[[[DataController sharedInstance] documentsDirectory], fileName];
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
     
     // Setup audio session
