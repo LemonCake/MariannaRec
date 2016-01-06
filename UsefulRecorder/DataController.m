@@ -102,10 +102,11 @@ NSString *const kSessionsDataKey = @"kSessionsDataKey";
     Session *newSession = [Session sessionFromDictionary:@{kSessionTitleKey : session,
                                                            kSessionCreatedAtKey : [NSDate date],
                                                            kSessionRecordingsKey : [NSMutableArray array]}];
-    [self.data insertObject:newSession atIndex:0];
+    [self.data addObject:newSession];
+    [self.data sortUsingDescriptors:@[self.sortDescriptor]];
     [self save];
         
-    if (completion) { completion(); }
+    if (completion) { completion(newSession); }
 }
 
 - (void)deleteSession:(Session *)session {

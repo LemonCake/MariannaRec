@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^DataControllerCompletionBlock)(void);
-
 @class Recording;
 @class Session;
+
+typedef void (^DataControllerCompletionBlock)(Session *);
+
 @interface DataController : NSObject
 
 + (DataController *)sharedInstance;

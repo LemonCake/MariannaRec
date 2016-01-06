@@ -114,8 +114,9 @@
         av.tapBlock = ^(UIAlertView *alertView, NSInteger buttonIndex) {
             if (buttonIndex == alertView.firstOtherButtonIndex) {
                 [[DataController sharedInstance] createNewSession:[alertView textFieldAtIndex:0].text
-                                                       completion:^(void) {
+                                                       completion:^(Session *newSession) {
                     [weakSelf.tableView reloadData];
+                    [weakSelf.navigationController presentViewController:[RecordingsViewController instantiateWithSession:newSession] animated:YES completion:nil];
                 }];
             }
         };

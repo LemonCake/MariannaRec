@@ -12,7 +12,7 @@
 
 @interface RecordingsViewController : UIViewController
 
-+ (RecordingsViewController *)instantiateWithSession:(NSString *)session;
++ (RecordingsViewController *)instantiateWithSession:(Session *)session;
 
 @property (nonatomic, strong) Session *session;
 
